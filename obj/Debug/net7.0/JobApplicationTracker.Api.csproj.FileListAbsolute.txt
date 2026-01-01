@@ -75,3 +75,5 @@ C:\Users\riyan\Desktop\JobApplicationTracker.Api\bin\Debug\net7.0\runtimes\win\l
 C:\Users\riyan\Desktop\JobApplicationTracker.Api\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\riyan\Desktop\JobApplicationTracker.Api\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\riyan\Desktop\JobApplicationTracker.Api\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\riyan\Desktop\JobApplicationTracker.Api\obj\Debug\net7.0\JobApplicationTracker.Api.RazorAssemblyInfo.cache
+C:\Users\riyan\Desktop\JobApplicationTracker.Api\obj\Debug\net7.0\JobApplicationTracker.Api.RazorAssemblyInfo.cs

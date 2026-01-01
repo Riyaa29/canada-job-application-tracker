@@ -63,7 +63,12 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
+builder.Services.AddRazorPages();
+
 builder.Services.AddAuthorization();
+
+builder.Services.AddHttpClient();
+
 
 var app = builder.Build();
 
@@ -78,6 +83,7 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+app.MapRazorPages();
 
 app.MapControllers();
 

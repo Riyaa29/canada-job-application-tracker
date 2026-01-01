@@ -15,3 +15,11 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\riyan\Desktop\JobApplicationTracker.Api
 build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/riyan/Desktop/JobApplicationTracker.Api/Pages/Jobs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSm9icy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/riyan/Desktop/JobApplicationTracker.Api/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

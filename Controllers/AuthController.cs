@@ -44,20 +44,70 @@ namespace JobApplicationTracker.Api.Controllers
             return Ok("User registered successfully");
         }
 
+        //Test CODE
+/*
+        [HttpPost("register")]
+        public async Task<IActionResult> Register()
+        {
+            var password = "Password123";
+            var hash = PasswordService.HashPassword(password);
+
+            var user = new User
+            {
+                FullName = "Test User",
+                Email = "test@test.com",
+                PasswordHash = hash
+            };
+
+            _context.Users.Add(user);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { password, hash });
+        }
+*/
+        
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginDto dto)
         {
-            var hash = PasswordService.HashPassword(dto.Password);
+            if (string.IsNullOrWhiteSpace(dto.Email) || string.IsNullOrWhiteSpace(dto.Password))
+                return BadRequest("Email and password are required");
+
+            var email = dto.Email.Trim();
+            var password = dto.Password.Trim();
+
+            var hash = PasswordService.HashPassword(password);
 
             var user = await _context.Users
-                .FirstOrDefaultAsync(u => u.Email == dto.Email && u.PasswordHash == hash);
+                .FirstOrDefaultAsync(u => u.Email == email);
 
             if (user == null)
+                return Unauthorized("Invalid credentials");
+
+            if (user.PasswordHash != hash)
                 return Unauthorized("Invalid credentials");
 
             var token = GenerateJwtToken(user);
             return Ok(new { token });
         }
+
+        //Test Code
+        /*
+        [HttpPost("login")]
+        public async Task<IActionResult> Login()
+        {
+            var password = "Password123";
+            var hash = PasswordService.HashPassword(password);
+
+            var user = await _context.Users
+                .FirstOrDefaultAsync(u => u.Email == "test@test.com");
+
+            return Ok(new
+            {
+                InputHash = hash,
+                DbHash = user!.PasswordHash,
+                Match = hash == user.PasswordHash
+            });
+        }*/
 
         [Authorize]
         [HttpGet("secure-test")]
